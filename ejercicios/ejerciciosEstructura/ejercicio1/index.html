@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="app.js" defer></script>
+    <style>
+        input[type="text"], input[type="submit"]{
+            width: 300px;
+        }
+        label{
+            margin-right: 100px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="nombre" class="input" placeholder="Nombre de la tarea"/><br/><br/>
+    <input type="text" id="duracion" class="input" placeholder="Duración aproximada (hh:mm:ss)"/><br/><br/>
+    <input type="text" id="fecha" class="input" placeholder="Fecha límite (dd/mm)"/><br/><br/>
+    <label for="completado">¿Está completado?</label><input type="radio" id="completado"/><br/><br/>
+    <input type="submit" id="boton"/>
+
+    <div id="mostrar"></div>
+</body>
+</html>

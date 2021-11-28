@@ -1,0 +1,16 @@
+#caja{
+    width: 100px;
+    height: 100px;
+}
+
+.red{
+    background-color: red;
+}
+
+.blue{
+    background-color: lightblue;
+}
+
+.green{
+    background-color: lightgreen;
+}

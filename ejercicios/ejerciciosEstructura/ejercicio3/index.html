@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="app.js" defer></script>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        div{
+            display: inline-block;
+            border: 2px solid lightblue;
+            padding: 5px; 
+        }
+        div * {
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Introduzca una expresión numérica</h2>
+        <p>
+            Introducir datos: 
+            <input type="text" id="expresion">
+            <input type="submit" id="ejecutar" value="Ejecutar expresión">
+        </p>
+        <p id="p2">Un parrafo de la clase ejemplo.</p>
+        <p id="p3">otro párrafo.</p>
+        <input type="submit" onclick='color()' value="Cambiar color">
+    </div>
+</body>
+</html>

@@ -1,0 +1,4 @@
+li:hover > ul > li{
+    font-weight: bold;
+}
+
