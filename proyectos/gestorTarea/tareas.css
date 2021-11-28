@@ -11,9 +11,12 @@ div{
     width: 600px;
 }
 
+
+
 #div1{
     height: 100px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
@@ -26,6 +29,16 @@ div{
 #verTarea{
     height: 300px;
     overflow: auto;
+    border-top: none;
+}
+
+#quitarBordes{
+    border: 1px solid black;
+    border-bottom: none;
+}
+
+#quitarBordes > input{
+    margin: 30px;
 }
 
 p{
@@ -43,4 +56,6 @@ p{
 p:hover{
     text-decoration: line-through;
     cursor: pointer;
+    background-color: red;
+    color: black;
 }
