@@ -17,11 +17,22 @@ const objData = JSON.parse(JSONData);
 const tabla = document.querySelector("table");
 
 
-for(let i = 0; i < objData.length; i++) {
+// for(let i = 0; i < objData.length; i++) {
+//     let fila = document.createElement("tr");
+//     for(let key in objData[i]) {
+//         let columna = document.createElement("td");
+//         let texto = document.createTextNode(objData[i][key]);
+//         columna.appendChild(texto);
+//         fila.appendChild(columna);
+//     }
+//     tabla.appendChild(fila);
+// }
+
+for(let user of objData) {
     let fila = document.createElement("tr");
-    for(let key in objData[i]) {
+    for(let key in user) {
         let columna = document.createElement("td");
-        let texto = document.createTextNode(objData[i][key]);
+        let texto = document.createTextNode(user[key]);
         columna.appendChild(texto);
         fila.appendChild(columna);
     }
@@ -29,6 +40,7 @@ for(let i = 0; i < objData.length; i++) {
 }
 
 
-
-
-
+function addCookie(){
+    document.cookie = `Usuarios = ${objData.length}`;
+    let fecha = new Date();
+}
