@@ -7,13 +7,21 @@ const divContador =  document.querySelector("#contador");
 const inputTarea = document.querySelector("#nombreTarea");
 
 function addT(){
-    if(tareas.indexOf(inputTarea.value) != -1){
-        console.log("He entrado en el if de addT");
+    let existe = false;
+
+    for(let tarea in tareas){
+        if(tareas[tarea].nombre == inputTarea.value){
+            existe = true;
+        }
+    }
+
+    if(existe){
         cambiarColor("red");
     }else{
+        
         let tarea = {
             nombre: inputTarea.value,
-            fecha: new Date()
+            fecha: new Date().toLocaleDateString()
         }
         tareas.push(tarea);
         contadorTareas++;
@@ -33,8 +41,18 @@ function mostrar(buscar = ""){
     for(let tarea in tareas){
         if(tareas[tarea].nombre.startsWith(buscar)){
             let pTarea = document.createElement("p");
+            let p2 = document.createElement("p");
+
+            let fecha = document.createTextNode(tareas[tarea].fecha)
+
             let textoTarea = document.createTextNode(tareas[tarea].nombre);
+            
+            p2.appendChild(fecha);
+            pTarea.appendChild(p2)
+
             pTarea.appendChild(textoTarea);
+            
+
             divMostrar.appendChild(pTarea);
         }
     }
@@ -47,6 +65,7 @@ function mostrar(buscar = ""){
 function borrar(event){
     if(event.target.matches("p")){
         let borrarP = event.target.textContent;
+        console.log(borrarP);
         for(let tarea in tareas){
             if(tareas[tarea].nombre == borrarP){
                 tareasElminadas.push(tareas[tarea]);
@@ -54,7 +73,7 @@ function borrar(event){
                 tareas.splice(tarea, 1);
             }
         }
-        mostrar()
+        mostrar();
     }
 }
 
@@ -74,7 +93,15 @@ document.getElementById("nombreTarea").addEventListener("click", (e) => {
 });
 document.getElementById("verTarea").addEventListener("click", borrar, false);
 
-document.getElementById("buscar").addEventListener("keydown", (e)=>{
-    console.log(document.getElementById("buscar").innerHTML);
-    mostrar(document.getElementById("buscar").textContent);
+document.getElementById("buscar").addEventListener("keyup", (e)=>{
+    mostrar(document.getElementById("buscar").value);
 });
+
+// let ps = document.getElementsByTagName("p");
+// console.log(ps);
+
+// for(let p of ps){
+//     p.addEventListener("mouseenter", (e)=>{
+//         p.style.backgroundColor = "red";
+//     })
+// }

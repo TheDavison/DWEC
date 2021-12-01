@@ -11,8 +11,6 @@ div{
     width: 600px;
 }
 
-
-
 #div1{
     height: 100px;
     display: flex;
@@ -41,8 +39,8 @@ div{
     margin: 30px;
 }
 
-p{
-    font-size: 30px;
+div > p{
+    font-size: 25px;
     margin-top: 10px;
     display: inline-block;
     border:1px solid black;
@@ -51,6 +49,10 @@ p{
     margin: 5px;
     border-radius: 25px;
 
+}
+
+div > p > p{
+    font-size:15px;
 }
 
 p:hover{
