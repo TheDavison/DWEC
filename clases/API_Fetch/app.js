@@ -60,10 +60,14 @@ fetch("https://jsonplaceholder.typicode.com/users")
                 for(let address in accion[argumento]){
                     if(address == "geo"){
                         for(let geo in accion[argumento][address]){
-                            
+                            let columna = document.createElement("td");
+                            let texto = document.createTextNode(accion[argumento][address][geo]);
+                            columna.appendChild(texto);
+                            fila.appendChild(columna);
                         }
                     }
                 }
             }
         }
+        tabla.appendChild(fila);
     })));
