@@ -28,6 +28,10 @@ div{
     height: 300px;
     overflow: auto;
     border-top: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
 }
 
 #quitarBordes{
@@ -55,9 +59,9 @@ div > p > p{
     font-size:15px;
 }
 
-p:hover{
+/* p:hover{
     text-decoration: line-through;
     cursor: pointer;
     background-color: red;
     color: black;
-}
+} */

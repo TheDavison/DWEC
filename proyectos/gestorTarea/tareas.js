@@ -41,14 +41,12 @@ function mostrar(buscar = ""){
     for(let tarea in tareas){
         if(tareas[tarea].nombre.startsWith(buscar)){
             let pTarea = document.createElement("p");
-            let p2 = document.createElement("p");
 
             let fecha = document.createTextNode(tareas[tarea].fecha)
 
             let textoTarea = document.createTextNode(tareas[tarea].nombre);
             
-            p2.appendChild(fecha);
-            pTarea.appendChild(p2)
+            divMostrar.appendChild(fecha);
 
             pTarea.appendChild(textoTarea);
             
@@ -65,7 +63,6 @@ function mostrar(buscar = ""){
 function borrar(event){
     if(event.target.matches("p")){
         let borrarP = event.target.textContent;
-        console.log(borrarP);
         for(let tarea in tareas){
             if(tareas[tarea].nombre == borrarP){
                 tareasElminadas.push(tareas[tarea]);
@@ -97,11 +94,16 @@ document.getElementById("buscar").addEventListener("keyup", (e)=>{
     mostrar(document.getElementById("buscar").value);
 });
 
-// let ps = document.getElementsByTagName("p");
-// console.log(ps);
 
-// for(let p of ps){
-//     p.addEventListener("mouseenter", (e)=>{
-//         p.style.backgroundColor = "red";
-//     })
-// }
+    let ps = divMostrar.children;
+    console.log(ps);
+    
+    for(let p of ps){
+        p.addEventListener("mouseenter", hover, false);
+    }
+
+function hover(e){
+    if(e.target.matches("p")){ 
+        if(e.target.style.background)
+    }
+}
