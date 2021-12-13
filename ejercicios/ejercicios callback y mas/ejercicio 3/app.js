@@ -2,8 +2,11 @@ function fechas(){
     let fecha = new Date().toLocaleDateString();
 
     return new Promise((resolve, reject) => {
-        resolve(localStorage.setItem("fecha", fecha));
-        reject("Has tocado algo y algo ha salido mal, ¿es que para que tocas?")
+        if(typeof Storage != undefined){
+            resolve(localStorage.setItem("fecha", fecha));
+        }else{
+            reject("Has tocado algo y algo ha salido mal, ¿es que para que tocas?")
+        }
     })
 }
 
