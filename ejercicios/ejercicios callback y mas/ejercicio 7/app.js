@@ -22,22 +22,39 @@ const codigoHTML = document.querySelector(".aplicacion");
 //     })
 //     .catch(console.log("Illo pa que tocas"));
 
-fetch(`${urlAPI}/posts/1`)
+// fetch(`${urlAPI}/posts/1`)
+//     .then(response => response.json())
+//     .then((posts) => {
+//         console.log(posts);
+//     })
+//     .catch((error) => {console.log(error);});
+
+
+// async function fetchAPI(){
+//     try {
+//         let response = await fetch(`${urlAPI}/posts/1`);
+//         let posts = await response.json();
+//         console.log(posts);
+//     } catch (error) {
+//         console.log(error);
+//     }
+// }
+
+// fetchAPI();
+
+// fetch(`${urlAPI}/todos`)
+//     .then(response => response.json())
+//     .then((posts) => {
+//         console.log(posts);
+//     })
+
+
+//POST
+fetch(`${urlAPI}/users`,{
+    method: "POST",
+    body: JSON.stringify({"name" : "David", "email" : "david@gmail.com"})
+})
     .then(response => response.json())
-    .then((posts) => {
-        console.log(posts);
+    .then((users) => {
+        console.log(users);
     })
-    .catch((error) => {console.log(error);});
-
-
-async function fetchAPI(){
-    try {
-        let response = await fetch(`${urlAPI}/posts/1`);
-        let posts = await response.json();
-        console.log(posts);
-    } catch (error) {
-        console.log(error);
-    }
-}
-
-fetchAPI();
